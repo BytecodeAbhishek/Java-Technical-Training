@@ -1,4 +1,7 @@
 package Codes;
+
+import java.util.Locale;
+
 // Class - Noun (Employee, Customer, Person, Student , Account , Product)
 // class - PascalCase e.g FullTimeEmployee
 // OOPS + SOLID Soft Eng.
@@ -153,9 +156,11 @@ public void setManager(String manager) {
     // public - keyword - provide access with in the package and outside the package
     public void print(){
         // this - keyword (it contains the current calling object reference)
+        Formatting formatting = new Formatting(new Locale("en","US"));
+        System.out.println("Current Date : "+formatting.doDateFormat());
         System.out.println("Id "+this.id);
         System.out.println("Name "+name);
-        System.out.println("Salary "+salary);
+        System.out.println("Salary "+formatting.doCurrencyFormat(salary));
         System.out.println("Company Name "+companyName);
     }
 }
